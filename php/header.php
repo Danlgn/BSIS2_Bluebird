@@ -6,7 +6,8 @@
         $user_details = mysqli_query($con, "SELECT * FROM users where username='{$userLoggedIn}'");
         $user = mysqli_fetch_array($user_details);
     } else {
-        exit(header("Location: login.php"));
+        echo "<div>hello? $_SESSION["username"]</div>";
+        //exit(header("Location: login.php"));
     }
     
 ?>
