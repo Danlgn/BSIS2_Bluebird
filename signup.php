@@ -6,7 +6,7 @@
 </head>
 <body>
         <?php
-        require('db.php');
+        require('./php/db.php');
 
         // If form submitted, insert values into the database.
         if (isset($_REQUEST['username'])){

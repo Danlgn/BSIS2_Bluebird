@@ -7,13 +7,13 @@ Class User {
     public function __construct($con, $username) {
         $this->con = $con;
 
-        $user_details_query = mysqli_query($cnn, "SELECT * FROM users where username='{$username}'");
+        $user_details_query = mysqli_query($con, "SELECT * FROM users where username='{$username}'");
         $this->user = mysqli_fetch_array($user_details_query);
     }
 
     public function getFullname() {
         $username = $this->user['username'];
-        $user_details_query = mysqli_query($cnn, "SELECT firstname,lastname FROM users where username='{$username}'");
+        $user_details_query = mysqli_query($con, "SELECT firstname,lastname FROM users where username='{$username}'");
         $row = mysqli_fetch_array($user_details_query);
         return $row['firstname'] . ' ' . $row['lastname'];
     }

@@ -24,7 +24,7 @@
             </div>          
             <div class="Sign">
                 <?php
-                    require('db.php');
+                    require('./php/db.php');
                     session_start();
                     
                     if (isset($_POST['username'])){

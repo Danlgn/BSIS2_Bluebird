@@ -1,3 +1,15 @@
+<?php
+require('./php/header.php')
+require('./php/user.php');
+require('./php/post.php');
+
+if(isset($_POST['post'])) {
+    $post = new Post($con, $userLoggedIn);
+    $post->submitPost($_POST['post_text'], 'none');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
