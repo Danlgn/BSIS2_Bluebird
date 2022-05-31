@@ -3,9 +3,9 @@ require('./php/header.php');
 require('./php/user.php');
 require('./php/post.php');
 
-if(isset($_POST['post'])) {
+if(isset($_POST['body'])) {
     $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['post_text'], 'none');
+    $post->submitPost($_POST['body'], 'none');
 }
 
 echo "<div>debugging: ".$_POST["image"]."</div>";
