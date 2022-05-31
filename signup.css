@@ -6,6 +6,7 @@
 body {
     font-family:Arial, Sans-Serif;
     background-color: #3486DB;
+    margin:0;
 }
 .clearfix:before, .clearfix:after{
     content: "";
@@ -69,7 +70,7 @@ a:hover{
 
 
 
-
+/*
 input[type='text'], input[type='email'],
 input[type='password'] {
     width: 200px;
@@ -94,5 +95,5 @@ input[type='submit']{
 }
 input[type='submit']:hover {
     background-color: f0df74;
-}
+}*/
 
