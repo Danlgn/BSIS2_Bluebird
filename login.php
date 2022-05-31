@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,6 @@
             </div>          
             <div class="Sign">
                 <?php
-                    session_start();
                     require('./php/db.php');
                                         
                     if (isset($_POST['username'])){

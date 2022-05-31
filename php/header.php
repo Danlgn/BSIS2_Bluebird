@@ -7,6 +7,7 @@
         $user = mysqli_fetch_array($user_details);
     } else {
         header("Location: login.php");
+        exit();
     }
     
 ?>
