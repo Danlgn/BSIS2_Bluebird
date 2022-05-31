@@ -99,7 +99,7 @@
                 </div>
                 <div class="single-input">
                         <label for="addressline2">Address Line 2</label>
-                        <input type="text"id="addressline2"  name="addressline2" placeholder="" required />
+                        <input type="text"id="addressline2"  name="addressline2" placeholder="Address Line 2"/>
                 </div>
                 <div class="single-input">
                         <label for="region">Region</label>
