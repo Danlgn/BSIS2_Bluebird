@@ -157,7 +157,7 @@ body{
 }
 .pfp img{
     width: 40px;
-    height: auto;
+    height: 40px;
     border-radius: 50%;
     margin-bottom: 10px;    
 }
@@ -166,25 +166,22 @@ body{
     display: grid;
     grid-template-columns: 100px 1fr 100px;
     align-items: center;
-    margin-bottom: 50px;
-}
-.Post img{
-    margin-left: 20px;
+    justify-items: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
 }
 
 
-.Postbox input{
+.Postbox input[type=text], textarea{
     height: 100px;
     width: 100%;
     font-size: 20px;
     background-color:rgb(7, 7, 20);
     text-align:left;
-    text-indent:20px;
+    text-indent:5px;
     border: none;
     border-bottom: 1px solid gray;
-    color: white;
-    
-     
+    color: white;   
    
  }
  

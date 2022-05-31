@@ -40,11 +40,11 @@
                 </div>
                 <div class="prof-container">
                     <div class="Profilepicture">
-                        <img src="pics/default icon.jpg" width="13%" >
+                        <img src="pics/default_icon.jpg" width="13%" >
                     </div>
                     <div class="info1">
-                        <h1>Kang Brian</h1>
-                        <p>@Day6YoungK</p>
+                        <h1>Fname Lname<?=$fname.' '.$lastname?></h1>
+                        <p>@username<?=$username?></p>
                         </div>
                     <div class="button1">
                         <button>Edit profile</button>
@@ -73,9 +73,25 @@
                             <p>Media</p> 
                             <p>Likes</p>
                     </div>
+                    <div class="Post">
+                        <div class="pfp"> 
+                            <a href=""><img src="pics/default_icon.jpg" alt=""></a>
+                        </div>
+            
+                        <div class="Postbox">
+                            <form action="" name="post" method="post">
+                                <textarea type="text" name="" id="body" placeholder="What's Happening?"></textarea>
+                                <input type="file" id="image" name="image" accept="image/*">
+                            </form>
+                        </div>
+                        <div class="btn-tweet">
+                            <button >Tweet</button>
+                        </div>
+                        
+                    </div>
                     <div class="ments">
                         <div class="pfp"> 
-                            <a href=""><img src="pics/default icon.jpg" alt=""></a>
+                            <a href=""><img src="pics/default_icon.jpg" alt=""></a>
                         </div>
             
                         <div class="un-post">
