@@ -57,7 +57,8 @@
                         if($result){
                                 echo "<div class='form'>
                                 <h3>You are registered successfully.</h3>
-                                <br/>Click here to <a href='login.php'>Login</a></div>";
+                                <a href='login.php'>Click here to Login</a>
+                                </div>";
                         }
                 }catch(Exception $error){
                         echo "<div class='form'>
