@@ -56,6 +56,9 @@
                     <input name="submit" class="btn" type="submit" value="Login" />
                 </form>
                 <?php } ?>
+
+                <a href="signup.php">Create an Account</a>
+
             </div>
         </div>
     </div> 
