@@ -91,7 +91,7 @@ if(isset($_POST['post'])) {
                         </div>
             
                         <div class="Postbox">
-                            <form action=""id="postForm" name="post" method="post">
+                            <form action="post" id="postForm" name="post" method="post">
                                 <textarea type="text" name="" id="body" placeholder="What's Happening?"></textarea>
                                 <input type="file" id="image" name="image" accept="image/*">
                             </form>
