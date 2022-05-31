@@ -40,7 +40,7 @@ session_start();
                         
                         if($rows==1){
                             $_SESSION["username"] = $username;
-                            header("Location: index.php");
+                            exit(header("Location: index.php"));
                         }
                         else{
                             echo "
