@@ -23,9 +23,9 @@
             </div>          
             <div class="Sign">
                 <?php
-                    require('./php/db.php');
                     session_start();
-                    
+                    require('./php/db.php');
+                                        
                     if (isset($_POST['username'])){
                         $username = stripslashes($_REQUEST['username']);
                         $username = mysqli_real_escape_string($con,$username);
@@ -37,7 +37,7 @@
                         $rows = mysqli_num_rows($result);
                         
                         if($rows==1){
-                            $_SESSION['username'] = $username;
+                            $_SESSION["username"] = $username;
                             header("Location: index.php");
                         }
                         else{
