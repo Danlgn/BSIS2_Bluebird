@@ -3,17 +3,13 @@
     --clr-gray: hsl(210, 15%, 74%);
 }
 
+html{
+    display: grid;
+}
 body {
     font-family:Arial, Sans-Serif;
     background-color: #3486DB;
     margin:0;
-}
-.clearfix:before, .clearfix:after{
-    content: "";
-    display: table;
-}
-.clearfix:after{
-    clear: both;
 }
 
 
@@ -46,18 +42,39 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+}
+form div{
+    display: flex;
+}
+form > div {
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+form > div > div{
+    flex-direction: column;    
+    width: min(20vw, 300px);
+    gap: 2px;
 }
 
 .form {    
     color: white;
-    width: 300px;
+    width: 50vw;
+    min-width: 470px;
+    max-width: 800px;
     margin: 0 auto;
+    margin-top: 5vh;
+    padding: 10px;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.747);
-    opacity: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1{
+    margin: 15px 0;
 }
 
 a{
@@ -97,3 +114,22 @@ input[type='submit']:hover {
     background-color: f0df74;
 }*/
 
+.btn{
+    
+    margin: 10px 0;
+    color: white;
+    background-color: #337ecf;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    font-size: 15px;
+}
+.btn:hover{
+    background-color: #2f72b9;
+}
+
+.single-input{
+    flex-direction: column;
+    gap: 2px;
+}
