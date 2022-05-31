@@ -55,8 +55,8 @@ if(isset($_POST['post'])) {
                         <img src="pics/default_icon.jpg" width="13%" >
                     </div>
                     <div class="info1">
-                        <h1>Fname Lname<?=$fname.' '.$lastname?></h1>
-                        <p>@username<?=$username?></p>
+                        <h1><?=$user["firstname"].' '.$user["lastname"]?></h1>
+                        <p>@<?=$user["username"]?></p>
                         </div>
                     <div class="button1">
                         <button>Edit profile</button>
