@@ -5,6 +5,7 @@
 
 body {
     font-family:Arial, Sans-Serif;
+    background-color: #3486DB;
 }
 .clearfix:before, .clearfix:after{
     content: "";
@@ -14,10 +15,6 @@ body {
     clear: both;
 }
 
-a, a:visited {
-    text-decoration: none;
-    color: white;
-}
 
 textarea,
 input[type=text], 
@@ -55,7 +52,7 @@ form {
     width: 300px;
     margin: 0 auto;
     justify-content: center;
-    background-color: #e7d03a;
+    background-color: rgba(0, 0, 0, 0.747);
     opacity: 50%;
     display: flex;
     flex-direction: column;
