@@ -45,7 +45,7 @@
                             echo "
                             <div class='form'>
                                 <h3>Username/password is incorrect.</h3>
-                                Click here to <a href='login.php'>Login</a>
+                                <p style='display: flex;'>Click here to <a href='login.php'>Login</a></p>
                             </div>
                             <br>";
                         }
