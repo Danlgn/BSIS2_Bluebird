@@ -20,13 +20,13 @@
             <div class="menu-nav">
                 <ul>
                     <li class="logo"><i class="fab fa-twitter fa-3x"></i></li>
-                    <li class="menu1"><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+                    <li class="menu1"><i class="fas fa-home"></i><a href="index.php">Home</a></li>
                     <li class="menu1"><i class="fa fa-hashtag"></i><a href="explore.html">Explore</a></li>
                     <li class="menu1"><i class="fas fa-bell"></i><a href="notif.html">Notification</a></li>
                     <li class="menu1"><i class="fa fa-envelope-o"></i><a href="messages.html">Messages</a></li>
                     <li class="menu1"><i class="fa fa-bookmark-o"></i><a href="topics.html">Topics</a></li>
                     <li class="menu1"><i class="fa fa-list-alt"></i><a href="lists.html">Lists</a></li>
-                    <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.html">Profile</a></li>
+                    <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.php">Profile</a></li>
                     <li class="menu1"><i class="fas fa-chart-line"></i><a href="analytics.html" target="_blank">Analytics</a></li>
                     <li class="menubtn"><button class="btn">Tweet</button></li>
                 </ul>

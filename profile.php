@@ -29,7 +29,7 @@ if(isset($_POST['post'])) {
             <div class="menu-nav">
                 <ul>
                     <li class="logo"><i class="fab fa-twitter fa-3x"></i></li>
-                    <li class="menu1"><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+                    <li class="menu1"><i class="fas fa-home"></i><a href="index.php">Home</a></li>
                     <li class="menu1"><i class="fa fa-hashtag"></i><a href="explore.html">Explore</a></li>
                     <li class="menu1"><i class="fas fa-bell"></i><a href="notif.html">Notification</a></li>
                     <li class="menu1"><i class="fa fa-envelope-o"></i><a href="messages.html">Messages</a></li>
