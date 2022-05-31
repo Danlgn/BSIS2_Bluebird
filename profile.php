@@ -29,7 +29,7 @@ if(isset($_POST['post'])) {
             <div class="menu-nav">
                 <ul>
                     <li class="logo"><i class="fab fa-twitter fa-3x"></i></li>
-                    <li class="menu1"><i class="fas fa-home"></i><a href="index.php">Home</a></li>
+                    <li class="menu1"><i class="fas fa-home"></i><a href="index.html">Home</a></li>
                     <li class="menu1"><i class="fa fa-hashtag"></i><a href="explore.html">Explore</a></li>
                     <li class="menu1"><i class="fas fa-bell"></i><a href="notif.html">Notification</a></li>
                     <li class="menu1"><i class="fa fa-envelope-o"></i><a href="messages.html">Messages</a></li>
@@ -91,13 +91,13 @@ if(isset($_POST['post'])) {
                         </div>
             
                         <div class="Postbox">
-                            <form action="" id="postForm" name="post" method="post">
+                            <form action=""id="postForm" name="post" method="post">
                                 <textarea type="text" name="" id="body" placeholder="What's Happening?"></textarea>
                                 <input type="file" id="image" name="image" accept="image/*">
                             </form>
                         </div>
                         <div class="btn-tweet">
-                            <input type="submit" form="postForm" value="Tweet"/>
+                            <button type="submit" form="postForm">Tweet</button>
                         </div>
                         
                     </div>
