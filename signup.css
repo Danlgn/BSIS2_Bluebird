@@ -1,3 +1,8 @@
+:root{
+    --clr-blue: hsl(205, 99%, 62%);
+    --clr-gray: hsl(210, 15%, 74%);
+}
+
 body {
     font-family:Arial, Sans-Serif;
 }
