@@ -185,7 +185,7 @@ body{
    
  }
  
-.btn-tweet button{
+.btn-tweet button, .btn-tweet input{
     padding: 10px;
     border-radius: 30px;
     margin-top: 10px;

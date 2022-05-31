@@ -91,13 +91,13 @@ if(isset($_POST['post'])) {
                         </div>
             
                         <div class="Postbox">
-                            <form action="" name="post" method="post">
+                            <form action="" id="postForm" name="post" method="post">
                                 <textarea type="text" name="" id="body" placeholder="What's Happening?"></textarea>
                                 <input type="file" id="image" name="image" accept="image/*">
                             </form>
                         </div>
                         <div class="btn-tweet">
-                            <button >Tweet</button>
+                            <input type="submit" form="postForm" value="Tweet"/>
                         </div>
                         
                     </div>
