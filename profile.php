@@ -1,5 +1,5 @@
 <?php
-require('./php/header.php')
+require('./php/header.php');
 require('./php/user.php');
 require('./php/post.php');
 
