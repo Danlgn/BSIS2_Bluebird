@@ -1,0 +1,100 @@
+.hero img{
+    width: 100%;
+    height: 300PX;
+    object-fit: cover;
+}
+
+.hero{
+    position: relative ;
+    border-bottom: 1px solid gray;
+    padding: 5px 0;
+}
+.hero:hover{
+    cursor: pointer;
+}
+
+.phtrend{
+    background-color: rgb(7, 7, 20);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.headline{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.search{
+    padding: 0 40px;
+}
+
+.search p{
+    color: rgba(240, 248, 255, 0.63);
+    background-color: rgba(207, 202, 202, 0.219);
+    border-radius: 50px;
+    padding:15px;
+}
+
+.phtrend,
+.News{
+    padding: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.trnds{
+    padding: 10px;
+}
+
+.trendin, .ntwts{
+    color: gray;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.trnds a{
+    color: rgb(65, 137, 219);
+}
+
+.phtrend h2,
+.News h2{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.title ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.team1,
+.team2{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.team1{
+    background-color: rgb(128, 0, 70);
+    border-radius: 5px 5px 0 0;
+}
+
+.team2{
+    background-color: rgb(216, 196, 17);
+    border-radius:  0 0 5px 5px;
+}
+
+.teamlogo img{
+    height: 50px;
+    width: 50px;
+}
+
+.pldate,
+.pldate strong{
+    color: grey;
+}

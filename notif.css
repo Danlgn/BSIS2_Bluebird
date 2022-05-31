@@ -1,0 +1,103 @@
+.notifs h2{
+    font-size: 25px;
+    padding: 10px;
+}
+
+.menu{
+    border-bottom: 1px solid gray;
+    font-size: 30px;
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+.menu a{
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+
+    text-decoration: none;
+}
+
+.menu a:hover{
+    background-color: rgba(240, 255, 255, 0.178);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+.heart span{
+    font-size: 39px;
+    color: hsl(335, 100%, 50%);
+    margin-left: 7px;
+
+}
+
+.rt i{
+    font-size: 30px;
+    color: hsl(140, 62%, 46%);
+    margin-left: 7px;
+
+}
+.usr i{
+    font-size: 30px;
+    color: hsl(194, 100%, 45%);
+    margin-left: 10px;
+}
+
+
+
+.like img, .notifs img{
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;    
+}
+
+.post{
+    color: rgb(177, 177, 177);
+}
+
+.ments{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    padding: 15px 10%;
+    border-bottom: 1px solid gray;
+
+}
+
+
+.icons{
+    font-size: 20px;    
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.icons i{
+    color: rgb(168, 168, 168);
+
+}
+
+.un_user a{
+    color: aliceblue;
+}
+#uname {
+    color: gray;
+}
+
+.replying p{
+    font-size: 15px;
+    margin-top: 5px;
+    color: gray;
+}
+.replying a{
+    color: rgb(34, 109, 207);
+}
+
+.post{
+    line-height: 30px;
+}

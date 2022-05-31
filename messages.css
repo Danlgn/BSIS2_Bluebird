@@ -1,0 +1,59 @@
+.notifs2 h2{
+    border-bottom: 1px solid gray;
+}
+.no-mes{
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 100px;
+    line-height: 40px;
+}
+
+button.new-mes {
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    background-color: #1C9EF8;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+button.new-mes:hover{
+    background-color: #1a8bdb;
+    cursor: pointer;
+}
+
+.message-top{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button.message-req{
+    width: 100%;
+    padding: 20px;
+    background-color:  rgb(7, 7, 20);
+    color: white;
+    border: none;
+    margin: 10px;
+    font-size: 15px;
+}
+button.message-req:hover{
+    background-color: rgba(68, 68, 68, 0.514);
+}
+
+.mes-pfp img{
+    width: 40px;
+    border-radius: 20px;
+}
+
+.inbox{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 10px;
+}
+
+.inbox h3{
+    font-size: 15px;
+}

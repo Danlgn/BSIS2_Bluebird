@@ -1,0 +1,92 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.lists{
+	padding: 10px;
+}
+
+.pinned-list .text,
+.discover-list .text,
+.your-list .text{
+	font-size: 18px;
+	font-weight: bold;
+}
+.discover-list{
+	padding-top: 25px;
+}
+
+.pin-box img{
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+.pin-box p{
+	font-size: 12px;
+	color: rgb(187, 187, 187);
+	padding-bottom: 25px;
+	border-bottom: 1px solid gray;
+}
+.box{
+	display: grid;
+	grid-template-columns: 60px 7fr 1fr;
+
+}
+
+.box .cover img{
+	border-radius: 10px;
+	width: 50px;
+	display: block;
+}
+.box{
+	margin: 30px 10px ;
+}
+.text-box img{
+	width: 20px;
+	border-radius: 20px;
+}
+.text-box p{
+	font-size: 12px;
+	color: rgb(187, 187, 187);
+}
+.text-box h3{
+	font-weight: 12px;
+}
+
+.unpfp{
+	display: flex;
+	align-items: center;
+	margin: 10px 0px;
+}
+
+.unpfp h4{
+	margin: 0px 5px;
+}
+
+.btn2{
+	
+	background-color: white;
+	color: black;
+	border: none;
+	border-radius: 30px;
+}
+.btn2:hover{
+	background-color: rgb(221, 221, 221);
+	color: black;
+	cursor: pointer;
+}
+
+.show-more a{
+	color: rgb(103, 179, 250);
+	
+}
+
+.show-more{
+	padding-bottom: 25px;
+	border-bottom: 1px solid gray;
+
+}
+
+.your-list {
+	padding-top: 25px;
+}
