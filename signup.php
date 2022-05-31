@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="base.css">
+<head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 <?php
