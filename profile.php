@@ -3,12 +3,22 @@ require('./php/header.php');
 require('./php/user.php');
 require('./php/post.php');
 
-if(isset($_POST['body'])) {
+if(isset($_POST['body']) || 
+  (isset( $_FILES["image"]) && !empty( $_FILES["image"]["name"]))
+  ){
     $post = new Post($con, $userLoggedIn);
     $post->submitPost($_POST['body'], $_FILES['image'], 'none');
+    exit(header("Location: profile.php"));
 }
-//echo "<div>debugging: ".$_POST["image"]."</div>";
 
+/* uncomment for debugging purposes
+
+echo "<pre>";
+print_r($_FILES);
+echo "</pre>";
+
+echo "<div>debugging: ".$_POST["image"]."</div>";
+*/
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +103,7 @@ if(isset($_POST['body'])) {
                         </div>
             
                         <div class="Postbox">
-                            <form action="" id="postForm" name="post" method="post">
+                            <form action="" id="postForm" name="post" method="post" enctype="multipart/form-data">
                                 <textarea type="text" name="body" id="body" placeholder="What's Happening?"></textarea>
                                 <input type="file" id="image" name="image" accept="image/*">
                             </form>

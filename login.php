@@ -1,5 +1,8 @@
 <?php
-session_start();
+    session_start();
+    if(isset($_SESSION["username"])) {
+        exit(header("Location: index.php"));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +38,7 @@ session_start();
                         $password = mysqli_real_escape_string($con,$password);
                         $query = "SELECT * FROM `users` WHERE username='$username'
                             and password='".md5($password)."'";
-                        $result = mysqli_query($con,$query) or die(mysql_error());
+                        $result = mysqli_query($con,$query) or die(mysqli_error($con));
                         $rows = mysqli_num_rows($result);
                         
                         if($rows==1){

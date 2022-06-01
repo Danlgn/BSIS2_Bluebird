@@ -3,6 +3,8 @@
 Class Post {
     private $user_obj;
     private $con;
+    //location of user uploads
+    private $targetDir = "uploads/"; 
 
     public function __construct($con, $username) {
         $this->con = $con;        
@@ -15,19 +17,32 @@ Class Post {
 
         if(trim($body) != '') {
             $date_added = date("Y-m-d H:i:s");
-
             $added_by = $this->user_obj->getUserName();
 
+            $image_name = "";
+            if(!empty($image["name"])){
+                //creates a FILE with unique name for the image 
+                //to prevent duplicate images
+                $filename = tempnam($this->targetDir, '');
+                //deletes the created FILE, what matters is the unique name
+                unlink($filename);
+                //move the user uploaded image to the upload folder
+                //it automatically renames it to the unique name
+                move_uploaded_file($image['tmp_name'], $filename);
+                //get the unique name of the image to store it in the database
+                $image_name = basename($filename);
+            }
+            
             // Added Part 2 
-            $sql = "INSERT INTO posts VALUES('','$body','$added_by','$date_added',false,'0')";
-
+            $sql = "INSERT INTO posts VALUES('','$body', '$image_name   ', '$added_by','$date_added',false,'0')";
             $query = mysqli_query($this->con, $sql);
-
             $returned_id = mysqli_insert_id($this->con);
 
+            
             // update post count for user
             $num_posts = $this->user_obj->getNumPosts();
             $num_posts++;
+            mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' WHERE username='$added_by'");
         }        
     }
 
@@ -38,6 +53,7 @@ Class Post {
         while($row = mysqli_fetch_array($data)) {
             $id = $row['id'];
             $body = $row['body'];
+            $image_path = $this->targetDir . $row['image'];
             $added_by = $row['added_by']; //author of post
             $date_time = $row['date_added'];
             
@@ -106,8 +122,9 @@ Class Post {
 
     <div class=\"un-post\">
         <ul>
-            <li class=\"un_user\"><a href=\"\">".$user_author["firstname"]." ".$user_author["lastname"]."</a> <a id=\"uname\" href=\"\">@$added_by - $time_message</a></li>
+            <li class=\"un_user\"><a style='font-weight: bold' href=\"\">".$user_author["firstname"]." ".$user_author["lastname"]."</a> <a id=\"uname\" href=\"\">@$added_by - $time_message</a></li>
             <li class=\"post\"><br>".nl2br($body)."</li>
+            <li class=\"post-img\"><img src=\"$image_path\"></li>
         </ul>
         <div class=\"icons\">
             <i class=\"far fa-comment\"></i>
@@ -126,15 +143,17 @@ Class Post {
         $posts = [];
 
         if($getFromUser)
-            $this->getAllPosts("AND added_by='".$this->user_obj->getUserName()."' ");
+            $posts = $this->getAllPosts("AND added_by='".$this->user_obj->getUserName()."' ");
         else
-            $this->getAllPosts();
+            $posts = $this->getAllPosts();
 
 
         //pag walang laman ang posts table
         if(empty($posts)){
-            echo "<div><h1>What? No tweet yet?</h1>
-                </div>";
+            echo "<div class='nopost'>
+                <h1>What? No post yet?</h1>
+                <p>Create your first post now!</p>
+            </div>";
         }
         else{
             foreach($posts as $post) {
