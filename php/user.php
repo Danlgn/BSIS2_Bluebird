@@ -22,6 +22,10 @@ Class User {
         return $this->user['username'];
     }
 
+    public function getNumPosts() {
+        return $this->user['num_posts'];
+    }
+
     public function updatePosts($num_posts) {
         $username = $this->user['username'];
         $query = mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' where username='$username'");
