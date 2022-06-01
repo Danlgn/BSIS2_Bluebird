@@ -5,7 +5,7 @@ require('./php/post.php');
 
 if(isset($_POST['body'])) {
     $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['body'], 'none');
+    $post->submitPost($_POST['body'], $_FILES['image'], 'none');
 }
 //echo "<div>debugging: ".$_POST["image"]."</div>";
 

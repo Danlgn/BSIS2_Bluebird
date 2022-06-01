@@ -9,7 +9,7 @@ Class Post {
         $this->user_obj = new User($this->con, $username);
     }
 
-    public function submitPost($body, $user_to) {
+    public function submitPost($body, $image, $user_to) {
         $body = strip_tags($body); // remove html tags
         $body = mysqli_real_escape_string($this->con, $body); // Escape single quotes. i.e. I'm going.
 
@@ -107,7 +107,7 @@ Class Post {
     <div class=\"un-post\">
         <ul>
             <li class=\"un_user\"><a href=\"\">".$user_author["firstname"]." ".$user_author["lastname"]."</a> <a id=\"uname\" href=\"\">@$added_by - $time_message</a></li>
-            <li class=\"post\"><br>$body</li>
+            <li class=\"post\"><br>".nl2br($body)."</li>
         </ul>
         <div class=\"icons\">
             <i class=\"far fa-comment\"></i>
@@ -123,13 +123,23 @@ Class Post {
     }
 
     public function loadPosts($getFromUser=false) {
-        $posts = 
-        ($getFromUser == true) ? 
-            $this->getAllPosts("AND added_by='".$this->user_obj->getUserName()."' ")
-            :
+        $posts = [];
+
+        if($getFromUser)
+            $this->getAllPosts("AND added_by='".$this->user_obj->getUserName()."' ");
+        else
             $this->getAllPosts();
-        foreach($posts as $post) {
-            echo $post;
+
+
+        //pag walang laman ang posts table
+        if(empty($posts)){
+            echo "<div><h1>What? No tweet yet?</h1>
+                </div>";
+        }
+        else{
+            foreach($posts as $post) {
+                echo $post;
+            }
         }
     }
 
