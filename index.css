@@ -150,6 +150,13 @@ body{
     background: rgb(197, 197, 197);
 }
 
+.logout{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
 /* middle */
 
 .notifs{
