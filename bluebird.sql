@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 07:53 PM
+-- Generation Time: Jun 01, 2022 at 10:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -58,8 +58,8 @@ CREATE TABLE `posts` (
 CREATE TABLE `post_comments` (
   `id` int(11) NOT NULL,
   `body` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `posted_by` varchar(60) DEFAULT NULL,
-  `posted_to` varchar(60) DEFAULT NULL,
   `date_added` datetime DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -87,14 +87,6 @@ CREATE TABLE `users` (
   `entrydate` datetime NOT NULL,
   `num_posts` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `salutation`, `suffix`, `addressline1`, `addressline2`, `region`, `brgy`, `zip`, `entrydate`, `num_posts`) VALUES
-(1, 'aaronpal', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'Aaron Gabriel', 'Palpallatoc', 'aaron_palpallatoc@dlsu.edu.ph', '', '', '#22 B Narra St Jackielou Ville BF Homes', '', 'NCR', 'BF Homes', 1720, '2022-06-01 17:53:45', 2),
-(2, 'dan123', 'bfd59291e825b5f2bbf1eb76569f8fe7', 'Daniel', 'Enciso', 'daniel_enciso@gmail.com', '', '', 'Doon sa kanto', '', 'NCR', 'San Antonio', 1720, '2022-06-01 17:54:42', 9);
 
 --
 -- Indexes for dumped tables
@@ -151,7 +143,7 @@ ALTER TABLE `post_comments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
