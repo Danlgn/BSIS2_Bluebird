@@ -1,5 +1,7 @@
 <?php
     require('./php/header.php');
+    require('./php/user.php');
+    require('./php/post.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@
         <div class="Sidebar">
             <div class="menu-nav">
                 <ul>
-                    <li class="logo"><i class="fab fa-twitter fa-3x"></i></li>
+                    <li class="logo"><a href="index.php"><i class="fab fa-twitter fa-3x"></i></a></li>
                     <li class="menu1"><i class="fas fa-home"></i><a href="index.php">Home</a></li>
                     <li class="menu1"><i class="fa fa-hashtag"></i><a href="explore.html">Explore</a></li>
                     <li class="menu1"><i class="fas fa-bell"></i><a href="notif.html">Notification</a></li>
@@ -28,16 +30,15 @@
                     <li class="menu1"><i class="fa fa-list-alt"></i><a href="lists.html">Lists</a></li>
                     <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.php">Profile</a></li>
                     <li class="menu1"><i class="fas fa-chart-line"></i><a href="analytics.html" target="_blank">Analytics</a></li>
-                    <li class="menubtn"><button class="btn">Tweet</button></li>
+                    <li class="menubtn"><button class="btn" onclick="window.location.href='./profile.php'">Tweet</button></li>
                 </ul>
             </div>
         </div>
         <div class="notifs">
             <div class="notifs2">
-
                 <h2><strong>Home</strong></h2>
-        
-                
+
+                <!--
                 <div class="ments">
                     <div class="pfp"> 
                         <a href=""><img src="pics/day6.png" alt=""></a>
@@ -155,7 +156,11 @@
                         </div>
                     </div>
                 </div>
-                
+-->
+            <?php
+                $posts = new Post($con, $userLoggedIn);
+                $posts->loadPosts();
+            ?>
             </div>
         </div>
         <div class="trend-container">

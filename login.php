@@ -14,7 +14,7 @@ session_start();
     <title>Login/Bluebird</title>
 </head>
 <body>
-    <div class="Navbar">
+    <main class="Navbar">
         <div class="Text">
             <div class="catchphrase">
                 <ul>
@@ -63,6 +63,6 @@ session_start();
 
             </div>
         </div>
-    </div> 
+    </main> 
 </body>
 </html>

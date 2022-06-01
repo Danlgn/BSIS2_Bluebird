@@ -91,7 +91,7 @@
                         </div>
                         <div>
                                 <label for="suffix">Suffix</label>
-                                <input type="text" id="suffix" name="suffix" placeholder="Suffix" required />
+                                <input type="text" id="suffix" name="suffix" placeholder="Suffix" />
                         </div>
                 </div>
                 <div class="single-input">

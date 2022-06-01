@@ -13,7 +13,7 @@ Class User {
 
     public function getFullname() {
         $username = $this->user['username'];
-        $user_details_query = mysqli_query($con, "SELECT firstname,lastname FROM users where username='{$username}'");
+        $user_details_query = mysqli_query($this->con, "SELECT firstname,lastname FROM users where username='{$username}'");
         $row = mysqli_fetch_array($user_details_query);
         return $row['firstname'] . ' ' . $row['lastname'];
     }
@@ -29,6 +29,10 @@ Class User {
     public function updatePosts($num_posts) {
         $username = $this->user['username'];
         $query = mysqli_query($this->con, "UPDATE users SET num_posts='$num_posts' where username='$username'");
+    }
+
+    public function getDetails() {
+        return $this->user;
     }
 }
 ?>

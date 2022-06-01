@@ -3,12 +3,11 @@ require('./php/header.php');
 require('./php/user.php');
 require('./php/post.php');
 
-if(isset($_POST['post'])) {
+if(isset($_POST['body'])) {
     $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['post_text'], 'none');
+    $post->submitPost($_POST['body'], 'none');
 }
-
-echo "<div>debugging: ".$_POST["image"]."</div>";
+//echo "<div>debugging: ".$_POST["image"]."</div>";
 
 ?>
 
@@ -30,8 +29,8 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
         <div class="Sidebar">
             <div class="menu-nav">
                 <ul>
-                    <li class="logo"><i class="fab fa-twitter fa-3x"></i></li>
-                    <li class="menu1"><i class="fas fa-home"></i><a href="index.html">Home</a></li>
+                    <li class="logo"><a href="index.php"><i class="fab fa-twitter fa-3x"></i></a></li>
+                    <li class="menu1"><i class="fas fa-home"></i><a href="index.php">Home</a></li>
                     <li class="menu1"><i class="fa fa-hashtag"></i><a href="explore.html">Explore</a></li>
                     <li class="menu1"><i class="fas fa-bell"></i><a href="notif.html">Notification</a></li>
                     <li class="menu1"><i class="fa fa-envelope-o"></i><a href="messages.html">Messages</a></li>
@@ -39,7 +38,7 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
                     <li class="menu1"><i class="fa fa-list-alt"></i><a href="lists.html">Lists</a></li>
                     <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.html">Profile</a></li>
                     <li class="menu1"><i class="fas fa-chart-line"></i><a href="analytics.html" target="_blank">Analytics</a></li>
-                    <li class="menubtn"><button class="btn">Tweet</button></li>
+                    <li class="menubtn"><button class="btn" onclick="window.location.href='./profile.php'">Tweet</button></li>
                 </ul>
             </div>
         </div>
@@ -103,7 +102,12 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
                         </div>
                         
                     </div>
-                    <div class="ments">
+                    <?php
+                        $post = new Post($con, $userLoggedIn);
+                        $post->loadPosts(true);
+                    ?>
+                    
+                    <!-- <div class="ments">
                         <div class="pfp"> 
                             <a href=""><img src="pics/default_icon.jpg" alt=""></a>
                         </div>
@@ -120,7 +124,7 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
                                 <i class="fas fa-external-link-alt"></i>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
