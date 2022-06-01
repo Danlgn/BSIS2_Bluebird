@@ -36,7 +36,7 @@ if(isset($_POST['body'])) {
                     <li class="menu1"><i class="fa fa-envelope-o"></i><a href="messages.html">Messages</a></li>
                     <li class="menu1"><i class="fa fa-bookmark-o"></i><a href="topics.html">Topics</a></li>
                     <li class="menu1"><i class="fa fa-list-alt"></i><a href="lists.html">Lists</a></li>
-                    <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.html">Profile</a></li>
+                    <li class="menu1"><i class="fa fa-user-o"></i><a href="profile.php">Profile</a></li>
                     <li class="menu1"><i class="fas fa-chart-line"></i><a href="analytics.html" target="_blank">Analytics</a></li>
                     <li class="menubtn"><button class="btn" onclick="window.location.href='./profile.php'">Tweet</button></li>
                 </ul>
