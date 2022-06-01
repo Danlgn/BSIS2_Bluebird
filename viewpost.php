@@ -2,6 +2,12 @@
     require('./php/header.php');
     require('./php/user.php');
     require('./php/post.php');
+
+    if(isset($_POST['body'])){
+        $post = new Post($con, $userLoggedIn);
+        $post->submitReply($_GET['postID'], $_POST['body'], $_FILES['image'], 'none');
+        exit(header("Location: viewpost.php?postID=".$_GET['postID']));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications</title>
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/viewpost.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/60795c9a44.js" crossorigin="anonymous"></script>
 
@@ -37,130 +44,29 @@
         </div>
         <div class="notifs">
             <div class="notifs2">
-                <h2><strong>Home</strong></h2>
-
-                <!--
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/day6.png" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href="">Myday Freedom Wall </a> <a id="uname" href="">@mdfreedomwall - 3h </a></li>
-                            <li class="post"><br> // to all // <br> <br> What was your childhood dream and what is your current dream? /gen </li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
+                <h2>Tweet</h2>
+                <?php
+                    $post = new Post($con, $userLoggedIn);
+                    $post->loadPostFromID($_GET["postID"]);
+                ?>
+                <div id="reply-container" class="Post">
+                        <div class="pfp"> 
+                            <a href=""><img src="pics/default_icon.jpg" alt=""></a>
                         </div>
-                    </div>
-                </div>
-        
-        
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/drum.jpg" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href="">Dowoon 🐻 </a> <a id="uname" href="">@dw_dablue - 3h </a></li>
-                            <li class="post"><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil eos accusantium, explicabo amet quis in?</li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
+            
+                        <div class="Postbox">
+                            <form action="" id="postForm" name="post" method="post" enctype="multipart/form-data">
+                                <textarea type="text" name="body" id="body" placeholder="What's Happening?"></textarea>
+                                <input type="file" id="image" name="image" accept="image/*">
+                            </form>
                         </div>
-                    </div>
-                </div>
-
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/cheol.jpg" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href=""> cheol </a> <a id="uname" href="">@soundofcoups - 3h </a></li>
-                            <li class="replying"><p>Replying to <a href="">@youngk</a></p></li>                
-                            <li class="post"><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil eos accusantium, explicabo amet quis in?</li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
+                        <div class="btn-tweet">
+                            <button type="submit" form="postForm">Reply</button>
                         </div>
+                        
                     </div>
-                </div>
-
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/day6.png" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href="">Myday Freedom Wall </a> <a id="uname" href="">@mdfreedomwall - 3h </a></li>
-                            <li class="post"><br> // to all // <br> <br> What was your childhood dream and what is your current dream? /gen </li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </div>
-                </div>
-        
-        
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/drum.jpg" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href="">Dowoon 🐻 </a> <a id="uname" href="">@dw_dablue - 3h </a></li>
-                            <li class="post"><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil eos accusantium, explicabo amet quis in?</li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ments">
-                    <div class="pfp"> 
-                        <a href=""><img src="pics/cheol.jpg" alt=""></a>
-                    </div>
-        
-                    <div class="un-post">
-                        <ul>
-                            <li class="un_user"><a href=""> cheol </a> <a id="uname" href="">@soundofcoups - 3h </a></li>
-                            <li class="replying"><p>Replying to <a href="">@youngk</a></p></li>                
-                            <li class="post"><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil eos accusantium, explicabo amet quis in?</li>
-                        </ul>
-                        <div class="icons">
-                            <i class="far fa-comment"></i>
-                            <i class="fas fa-retweet"></i>
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                    </div>
-                </div>
--->
             <?php
-                $posts = new Post($con, $userLoggedIn);
-                $posts->loadPosts();
+                $post->loadComments($_GET['postID']);
             ?>
             </div>
         </div>

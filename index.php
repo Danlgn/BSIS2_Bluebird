@@ -11,10 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Bluebird</title>
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/60795c9a44.js" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/clicktweet.js"></script>
 </head>
 <body>
     <div class="main-cont">
@@ -37,9 +38,9 @@
         </div>
         <div class="notifs">
             <div class="notifs2">
-                <h2><strong>Home</strong></h2>
+                <h2>Home</h2>
 
-                <!--
+                <!-- Sample static posts
                 <div class="ments">
                     <div class="pfp"> 
                         <a href=""><img src="pics/day6.png" alt=""></a>

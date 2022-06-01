@@ -1,22 +1,22 @@
 <?php
-require('./php/header.php');
-require('./php/user.php');
-require('./php/post.php');
+    require('./php/header.php');
+    require('./php/user.php');
+    require('./php/post.php');
 
-if(isset($_POST['body'])){
-    $post = new Post($con, $userLoggedIn);
-    $post->submitPost($_POST['body'], $_FILES['image'], 'none');
-    exit(header("Location: profile.php"));
-}
+    if(isset($_POST['body'])){
+        $post = new Post($con, $userLoggedIn);
+        $post->submitPost($_POST['body'], $_FILES['image']);
+        exit(header("Location: profile.php"));
+    }
 
-/* uncomment for debugging purposes
+    /* uncomment for debugging purposes
 
-echo "<pre>";
-print_r($_FILES);
-echo "</pre>";
+    echo "<pre>";
+    print_r($_FILES);
+    echo "</pre>";
 
-echo "<div>debugging: ".$_POST["image"]."</div>";
-*/
+    echo "<div>debugging: ".$_POST["image"]."</div>";
+    */
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +27,12 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications</title>
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/60795c9a44.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/clicktweet.js"></script>
 </head>
 <body>
     <div class="main-cont">
@@ -53,9 +55,7 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
         </div>
         <div class="notifs">
             <div class="notifs2">
-
-                <h2><strong>Profile</strong></h2>
-        
+                <h2>Profile</h2>
                                 
                 <div class="CoverPhoto">
                     <img src="pics/bgwallpaper.png"  width="100%" height="262px" >
@@ -83,10 +83,6 @@ echo "<div>debugging: ".$_POST["image"]."</div>";
                                 <strong>5</strong> Followers</p>
                         </div>
                     </div>
-
-
-                    
-                    
                 </div>
                 <div class="Twitternav">
                     <div class="Twitterlist">
