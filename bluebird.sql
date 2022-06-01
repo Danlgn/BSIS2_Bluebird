@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 10:00 PM
+-- Generation Time: Jun 01, 2022 at 10:15 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,18 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `mydb`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `likes`
---
-
-CREATE TABLE `likes` (
-  `id` int(11) NOT NULL,
-  `username` varchar(60) DEFAULT NULL,
-  `post_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -93,12 +81,6 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `likes`
---
-ALTER TABLE `likes`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -120,12 +102,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `likes`
---
-ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
