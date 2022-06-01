@@ -3,9 +3,7 @@ require('./php/header.php');
 require('./php/user.php');
 require('./php/post.php');
 
-if(isset($_POST['body']) || 
-  (isset( $_FILES["image"]) && !empty( $_FILES["image"]["name"]))
-  ){
+if(isset($_POST['body'])){
     $post = new Post($con, $userLoggedIn);
     $post->submitPost($_POST['body'], $_FILES['image'], 'none');
     exit(header("Location: profile.php"));
