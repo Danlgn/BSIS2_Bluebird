@@ -68,6 +68,7 @@
             <?php
                 $post->loadComments($_GET['postID']);
             ?>
+            
             </div>
         </div>
         <div class="trend-container">

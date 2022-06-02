@@ -68,6 +68,11 @@ Class Post {
         }        
     }
 
+    //helper function
+    function makeDir($path)
+    {
+        return is_dir($path) || mkdir($path);
+    }
 
     public function time_elapsed_string($date_time)
     {
@@ -126,6 +131,17 @@ Class Post {
         return $time_message;
     }
 
+    public function countComments($postID) {
+        $sql = "SELECT * FROM post_comments WHERE post_id='$postID'";
+        $query = mysqli_query($this->con, $sql);
+        $result = mysqli_num_rows($query);
+        if($result > 0) {
+            return $result;
+        } else {
+            return "";
+        }
+    }
+
     public function getAllPosts($special="") {
         $posts = [];
         $data = mysqli_query($this->con, "SELECT * FROM posts where deleted=0 $special ORDER BY id DESC");
@@ -134,6 +150,7 @@ Class Post {
             $id = $row['id'];
 
             $body = $row['body'];
+            $this->makeDir($this->targetDir);
             $image_path = $this->targetDir . $row['image'];
             $image_html = "";
             if(!empty($row['image'])){
@@ -147,6 +164,7 @@ Class Post {
             $user_author = $added_by_obj->getDetails();
             
             $time_message = $this->time_elapsed_string($date_time);
+            $comments_num = $this->countComments($id);
 
             //adding the posts
             $str = 
@@ -162,7 +180,10 @@ Class Post {
             $image_html
         </ul>
         <div class=\"icons\">
-            <i class=\"far fa-comment\"></i>
+            <div style='display:flex;align-items:center;gap:3px;'>
+                <i class=\"far fa-comment\"></i>
+                <p style='font-size: 15px;'>$comments_num</p>
+            </div>
             <i class=\"fas fa-retweet\"></i>
             <i class=\"far fa-heart\"></i>
             <i class=\"fas fa-external-link-alt\"></i>
@@ -182,6 +203,7 @@ Class Post {
             $id = $row['id'];
 
             $body = $row['body'];
+            $this->makeDir($this->targetDir);
             $image_path = $this->targetDir . $row['image'];
             $image_html = "";
             if(!empty($row['image'])){

@@ -163,6 +163,7 @@
                 $posts = new Post($con, $userLoggedIn);
                 $posts->loadPosts();
             ?>
+
             </div>
         </div>
         <div class="trend-container">

@@ -6,6 +6,5 @@ $(document).ready(function(){
             console.log(postID);
             window.location.href ="viewpost.php?postID="+postID;
         }
-        
     });
 });
